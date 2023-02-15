@@ -1,3 +1,4 @@
+using Microsoft.VisualBasic;
 using System;
 using System.Globalization;
 
@@ -24,7 +25,7 @@ namespace vetor3
             }
             
             double media = soma / N;
-            Console.WriteLine(media.ToString("F1", CultureInfo.InvariantCulture));
+            Console.WriteLine(media.ToString("F2", CultureInfo.InvariantCulture));
 
             double abaixomedia = 0.0;
             for (int i=0; i<N; i++)
