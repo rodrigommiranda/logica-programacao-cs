@@ -1,0 +1,35 @@
+using System;
+
+namespace vetor2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int N = int.Parse(Console.ReadLine());
+
+            int[] a = new int[N];
+            int[] b = new int[N];
+            int[] c = new int[N];
+
+            string[] vet = Console.ReadLine().Split(' ');
+            for (int i = 0; i < N; i++)
+            {
+                a[i] = int.Parse(vet[i]);
+            }
+
+            string[] vet1 = Console.ReadLine().Split(' ');
+            for (int i=0; i<N; i++)
+            {
+                b[i] = int.Parse(vet[i]);
+            }
+            for (int i=0; i<N; i++)
+            {
+                c[i] = (a[i] + b[i]);
+                Console.Write(c[i] + " ");
+            }
+            Console.ReadLine();
+
+        }
+    }
+}
