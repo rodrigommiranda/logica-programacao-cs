@@ -1,0 +1,42 @@
+using System;
+using System.Globalization;
+
+namespace vetor3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int N = int.Parse(Console.ReadLine());
+
+            double[] nota = new double[N];
+
+            string[] vet = Console.ReadLine().Split(' ');
+            for (int i = 0; i < N; i++)
+            {
+                nota[i] = double.Parse(vet[i], CultureInfo.InvariantCulture);
+            }
+
+            double soma = 0.0;
+            for (int i=0; i<N; i++)
+            {
+                soma = nota[i] + soma;
+            }
+            
+            double media = soma / N;
+            Console.WriteLine(media.ToString("F1", CultureInfo.InvariantCulture));
+
+            double abaixomedia = 0.0;
+            for (int i=0; i<N; i++)
+            {
+               if (nota[i] < media)                    
+                {
+                    abaixomedia = nota[i];
+                    Console.WriteLine(abaixomedia.ToString("F1", CultureInfo.InvariantCulture));
+                }   
+            }
+            Console.ReadLine();
+
+        }
+    }
+}
