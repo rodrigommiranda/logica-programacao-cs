@@ -1,0 +1,42 @@
+using System;
+using System.Globalization;
+
+namespace vetor4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int N = int.Parse(Console.ReadLine());
+
+            int[] numeros = new int[N];
+            int[] numerospares = new int[N];
+
+            string[] vet = Console.ReadLine().Split(' ');
+            for (int i=0; i<N; i++)
+            {
+                numeros[i] = int.Parse(vet[i]);
+            }
+
+            int cont = 0;
+            for (int i=0; i<N; i++)
+            {
+                if (numeros[i] % 2 == 0)
+                {
+                    numerospares[i] = numeros[i];
+                    cont++;
+                }
+            }
+            int soma = 0;
+
+            
+            for (int i=0; i<N; i++)
+            {
+                soma = numerospares[i] + soma;
+            }
+
+            int media = soma / cont;
+            Console.WriteLine(media.ToString("F1", CultureInfo.InvariantCulture));
+        }
+    }
+}
